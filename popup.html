@@ -1,21 +1,172 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      width: 260px;
+      font-family: "Segoe UI", sans-serif;
+      transition: all 0.25s ease;
+    }
 
+    /* DARK THEME */
+    body.dark {
+      background: #0f1115;
+      color: #e4e4e7;
+    }
+
+    /* LIGHT THEME */
+    body.light {
+      background: #f9fafb;
+      color: #111827;
+    }
+
+    .container {
+      padding: 16px;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      margin: 6px 0 16px;
+      opacity: 0.6;
+    }
+
+    /* BUTTON */
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    body.dark button {
+      background: #1f2937;
+      color: #f9fafb;
+    }
+
+    body.dark button:hover {
+      background: #374151;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    body.light button {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    body.light button:hover {
+      background: #d1d5db;
+    }
+
+    /* TOGGLE SWITCH */
+    .toggle-container {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .switch {
+      position: relative;
+      width: 36px;
+      height: 20px;
+    }
+
+    .switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      background: #6b7280;
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .slider::before {
+      content: "";
+      position: absolute;
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      top: 3px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    input:checked + .slider {
+      background: #2563eb;
+    }
+
+    input:checked + .slider::before {
+      transform: translateX(16px);
+    }
+
+    .footer {
+      margin-top: 12px;
+      font-size: 10px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body class="dark">
   <div class="container">
     <h2>AutoFill</h2>
-    <p class="subtitle">Job Form Assistant</p>
+    <p class="subtitle">Smart Job Form Assistant</p>
 
-    <button id="fillBtn">Fill Form</button>
+    <button id="fillBtn">Auto Fill Now</button>
 
-    <div class="links">
-      <a href="https://github.com/ankur-ctrl-z" target="_blank">GitHub</a>
-      <a href="https://ankurwork.vercel.app" target="_blank">Portfolio</a>
+    <div class="toggle-container">
+      <span>Dark Mode</span>
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
     </div>
+
+    <div class="footer">v1.0</div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const body = document.body;
+      const toggle = document.getElementById("themeToggle");
+
+      chrome.storage.local.get("theme", (res) => {
+        const theme = res.theme || "dark";
+        body.classList.add(theme);
+        toggle.checked = theme === "light";
+      });
+
+      toggle.addEventListener("change", () => {
+        const newTheme = toggle.checked ? "light" : "dark";
+
+        body.classList.remove("dark", "light");
+        body.classList.add(newTheme);
+
+        chrome.storage.local.set({ theme: newTheme });
+      });
+    });
+  </script>
 
   <script src="popup.js"></script>
 </body>
