@@ -1,43 +1,37 @@
-const data = {
-  name: "Ankur Sharma",
-  email: "ankur.code.dev@email.com",
-  phone: "9565530262",
-  github: "https://github.com/ankur-ctrl-z",
-  portfolio: "https://ankurwork.vercel.app",
-  experience: "1+ years",
-  location: "Noida, India"
-};
-
-// field aliases (handles real-world variations)
 const fieldMap = {
-  name: ["name", "full name", "your name"],
-  email: ["email", "e-mail", "mail"],
-  phone: ["phone", "mobile", "contact", "number"],
+  name: ["name", "full name"],
+  email: ["email", "e-mail"],
+  phone: ["phone", "mobile", "contact"],
   github: ["github"],
   portfolio: ["portfolio", "website"],
-  experience: ["experience", "years", "work experience"],
-  location: ["location", "city", "address"]
+  experience: ["experience", "years"],
+  location: ["location", "city"]
 };
 
-// extract all possible text signals from field
-function getFieldText(field) {
-  const label = document.querySelector(`label[for="${field.id}"]`);
-
-  return (
-    (field.name || "") +
-    (field.id || "") +
-    (field.placeholder || "") +
-    (field.getAttribute("aria-label") || "") +
-    (label ? label.innerText : "")
-  ).toLowerCase();
+async function loadData() {
+  const res = await fetch(chrome.runtime.getURL("data.json"));
+  return res.json();
 }
 
-// check if field matches any keyword
+function getFieldText(field) {
+  let text = "";
+
+  text += field.getAttribute("aria-label") || "";
+  text += field.getAttribute("placeholder") || "";
+  text += field.name || "";
+  text += field.id || "";
+  text += field.textContent || "";
+
+  const parent = field.closest("div[role='listitem']");
+  if (parent) text += parent.innerText;
+
+  return text.toLowerCase();
+}
+
 function matchField(fieldText, keywords) {
   return keywords.some(keyword => fieldText.includes(keyword));
 }
 
-// normal input fill (React-safe)
 function fillInput(field, value) {
   field.focus();
   field.value = value;
@@ -46,21 +40,30 @@ function fillInput(field, value) {
   field.dispatchEvent(new Event("change", { bubbles: true }));
 }
 
-// Google Forms support
 function fillGoogleField(field, value) {
-  field.innerText = value;
+  field.focus();
 
-  field.dispatchEvent(new Event("input", { bubbles: true }));
+  const event = new InputEvent("input", {
+    bubbles: true,
+    cancelable: true,
+    data: value
+  });
+
+  field.textContent = value;
+  field.dispatchEvent(event);
 }
 
-// main function
-function fillForm() {
+async function fillForm() {
+  const data = await loadData();
+
   const inputs = document.querySelectorAll(
     "input, textarea, div[role='textbox']"
   );
 
   inputs.forEach(field => {
     const fieldText = getFieldText(field);
+
+    if (field.value && field.value.length > 0) return;
 
     Object.entries(fieldMap).forEach(([key, keywords]) => {
       if (!data[key]) return;
@@ -76,5 +79,4 @@ function fillForm() {
   });
 }
 
-// run autofill
 fillForm();

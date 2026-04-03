@@ -128,7 +128,7 @@
   </style>
 </head>
 
-<body class="dark">
+<body>
   <div class="container">
     <h2>AutoFill</h2>
     <p class="subtitle">Smart Job Form Assistant</p>
@@ -151,11 +151,14 @@
       const body = document.body;
       const toggle = document.getElementById("themeToggle");
 
-      chrome.storage.local.get("theme", (res) => {
-        const theme = res.theme || "dark";
-        body.classList.add(theme);
-        toggle.checked = theme === "light";
-      });
+chrome.storage.local.get("theme", (res) => {
+  const theme = res.theme || "dark";
+
+  body.classList.remove("dark", "light");
+  body.classList.add(theme);
+
+  toggle.checked = theme === "light";
+});
 
       toggle.addEventListener("change", () => {
         const newTheme = toggle.checked ? "light" : "dark";
