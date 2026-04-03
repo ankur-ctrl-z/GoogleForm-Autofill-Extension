@@ -1,11 +1,47 @@
 {
   "name": "Ankur Sharma",
+  "first_name": "Ankur",
+  "last_name": "Sharma",
+
   "email": "ankur.code.dev@email.com",
   "phone": "9565530262",
-  "location": "Noida, India",
+  "alternate_phone": "",
+
+  "location": "Noida, Uttar Pradesh, India",
+  "city": "Noida",
+  "state": "Uttar Pradesh",
+  "country": "India",
+
   "github": "https://github.com/ankur-ctrl-z",
+  "linkedin": "https://www.linkedin.com/in/ankur-sharma-3a6037226",
   "portfolio": "https://ankurwork.vercel.app",
-  "experience": "1+ years",
-  "skills": "JavaScript, Node.js, React",
-  "summary": "Full Stack Developer..."
+
+  "headline": "Full Stack Developer (1+ Yr Exp) | Backend-Focused | Next.js, Node.js, PostgreSQL, Docker",
+
+  "summary": "Full Stack Developer with 1+ year experience building scalable backend-focused applications. Strong in REST APIs, database design, and performance optimization.",
+
+  "experience_years": "1+",
+  "current_role": "Full Stack Developer",
+  "current_company": "Unarrow Digital Solutions",
+
+  "skills": "JavaScript, TypeScript, React.js, Next.js, Node.js, Express.js, PostgreSQL, Prisma, Docker, CI/CD",
+  "primary_skills": "Node.js, Backend Development, APIs",
+
+  "education_degree": "Master of Computer Applications (MCA)",
+  "education_college": "Vivekananda Global University",
+  "education_year": "2024-2026",
+  "cgpa": "8.6",
+
+  "projects": "AI Chrome Extension (LeetCode hints), Real-time GPS Tracking System, Event Booking App with Google Calendar",
+
+  "achievement": "Solved 600+ DSA problems (500+ on LeetCode)",
+
+  "notice_period": "Immediate",
+  "current_ctc": "3.5",
+  "expected_ctc": "6.0",
+  "willing_to_relocate": "Yes",
+
+  "resume_text": "Full Stack Developer with backend expertise in Node.js and PostgreSQL. Built scalable applications, solved 600+ DSA problems, strong in system design basics.",
+
+  "cover_letter": "I am interested in this opportunity as it aligns with my backend-focused development experience and problem-solving skills. I have built scalable systems and would like to contribute effectively to your team."
 }
