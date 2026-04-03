@@ -69,17 +69,6 @@ autofill-extension/
 
 ---
 
-## ⚠️ Limitations
-
-* Does not fully support:
-
-  * Dropdowns (`select`)
-  * Radio buttons
-  * File uploads (resume)
-* Field matching is heuristic-based (not 100% accurate)
-
----
-
 ## 🔮 Future Improvements
 
 * AI-based field detection
