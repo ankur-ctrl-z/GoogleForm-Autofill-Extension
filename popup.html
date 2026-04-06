@@ -10,13 +10,11 @@
       transition: all 0.25s ease;
     }
 
-    /* DARK THEME */
     body.dark {
       background: #0f1115;
       color: #e4e4e7;
     }
 
-    /* LIGHT THEME */
     body.light {
       background: #f9fafb;
       color: #111827;
@@ -39,7 +37,6 @@
       opacity: 0.6;
     }
 
-    /* BUTTON */
     button {
       width: 100%;
       padding: 12px;
@@ -70,7 +67,6 @@
       background: #d1d5db;
     }
 
-    /* TOGGLE SWITCH */
     .toggle-container {
       margin-top: 14px;
       display: flex;
@@ -145,31 +141,6 @@
 
     <div class="footer">v1.0</div>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const body = document.body;
-      const toggle = document.getElementById("themeToggle");
-
-chrome.storage.local.get("theme", (res) => {
-  const theme = res.theme || "dark";
-
-  body.classList.remove("dark", "light");
-  body.classList.add(theme);
-
-  toggle.checked = theme === "light";
-});
-
-      toggle.addEventListener("change", () => {
-        const newTheme = toggle.checked ? "light" : "dark";
-
-        body.classList.remove("dark", "light");
-        body.classList.add(newTheme);
-
-        chrome.storage.local.set({ theme: newTheme });
-      });
-    });
-  </script>
 
   <script src="popup.js"></script>
 </body>
