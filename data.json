@@ -3,11 +3,11 @@
   "first_name": "Ankur",
   "last_name": "Sharma",
 
-  "email": "ankur.code.dev@email.com",
+  "email": "ankur.code.dev@gmail.com",
   "phone": "9565530262",
   "alternate_phone": "",
 
-  "location": "Noida, Uttar Pradesh, India",
+  "location": "Noida, India",
   "city": "Noida",
   "state": "Uttar Pradesh",
   "country": "India",
@@ -16,32 +16,32 @@
   "linkedin": "https://www.linkedin.com/in/ankur-sharma-3a6037226",
   "portfolio": "https://ankurwork.vercel.app",
 
-  "headline": "Full Stack Developer (1+ Yr Exp) | Backend-Focused | Next.js, Node.js, PostgreSQL, Docker",
+  "headline": "Software Developer | Full Stack | MERN, Next.js, Node.js, PostgreSQL, Docker",
 
-  "summary": "Full Stack Developer with 1+ year experience building scalable backend-focused applications. Strong in REST APIs, database design, and performance optimization.",
+  "summary": "Software Developer with 1+ year of experience building full-stack applications. Backend-focused with strong expertise in REST APIs, CI/CD pipelines, Docker deployments, and database design using PostgreSQL and MongoDB. Solved 500+ DSA problems on LeetCode with a contest rating of 1500+.",
 
   "experience_years": "1+",
-  "current_role": "Full Stack Developer",
+  "current_role": "Website Developer",
   "current_company": "Unarrow Digital Solutions",
 
-  "skills": "JavaScript, TypeScript, React.js, Next.js, Node.js, Express.js, PostgreSQL, Prisma, Docker, CI/CD",
-  "primary_skills": "Node.js, Backend Development, APIs",
+  "skills": "Java, JavaScript, TypeScript, Python, React, Next.js, Tailwind CSS, Shadcn, Express, Node.js, Prisma, Git, Docker, JWT, Zod, Clerk, Cloudflare Workers, GitHub, PostgreSQL, MongoDB, MySQL",
+  "primary_skills": "Node.js, React, PostgreSQL, Docker, REST APIs",
 
-  "education_degree": "Master of Computer Applications (MCA)",
-  "education_college": "Vivekananda Global University",
+  "education_degree": "Master in Computer Application (MCA) - Specialization: Cloud Computing",
+  "education_college": "Vivekanand Global University",
   "education_year": "2024-2026",
   "cgpa": "8.6",
 
-  "projects": "AI Chrome Extension (LeetCode hints), Real-time GPS Tracking System, Event Booking App with Google Calendar",
+  "projects": "1. Live GPS Tracker - Real-time delivery tracking using WebSocket, Leaflet, Node.js. Handled GPS noise, connection drops and live location streaming. 2. SJA Care Center - Chiropractic platform built with MERN stack, appointment booking, deployed on Hostinger with AWS. 3. IRCTC-like Ticket Booking System - Seat allocation with age-based prioritization, RAC and cancellation handling, 100+ simulated bookings.",
 
-  "achievement": "Solved 600+ DSA problems (500+ on LeetCode)",
+  "achievement": "Solved 500+ DSA problems on LeetCode and 150+ on GeeksforGeeks. Achieved 1500+ contest rating on LeetCode with top rank of 822 out of 32,000+ participants in Weekly Contest 502.",
 
   "notice_period": "Immediate",
-  "current_ctc": "3.5", 
+  "current_ctc": "3.5",
   "expected_ctc": "6.0",
   "willing_to_relocate": "Yes",
 
-  "resume_text": "Full Stack Developer with backend expertise in Node.js and PostgreSQL. Built scalable applications, solved 600+ DSA problems, strong in system design basics.",
+  "resume_text": "Software Developer with 1+ year experience. Built full-stack applications using MERN, Next.js, PostgreSQL, Docker. Strong in system design, REST APIs, and CI/CD. 500+ DSA problems solved on LeetCode.",
 
-  "cover_letter": "I am interested in this opportunity as it aligns with my backend-focused development experience and problem-solving skills. I have built scalable systems and would like to contribute effectively to your team."
+  "cover_letter": "I am excited to apply for this role as it aligns perfectly with my backend-focused development experience. At Unarrow Digital Solutions, I led end-to-end delivery of multiple client projects using MERN stack, PostgreSQL, and Docker. I have a strong foundation in DSA with 500+ problems solved and a LeetCode contest rating of 1500+. I am confident I can contribute effectively to your engineering team from day one."
 }
