@@ -37,7 +37,7 @@ const fieldMap = {
   },
   country: {
     keywords: ["country", "nation"],
-    negative: ["city", "state"]
+    negative: ["city", "state"] 
   },
   github: {
     keywords: ["github", "github profile", "github url", "github link"],
