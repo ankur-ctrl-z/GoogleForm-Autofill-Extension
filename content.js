@@ -1,5 +1,5 @@
 const fieldMap = { 
-  first_name: {
+  first_name: { 
     keywords: ["first name", "firstname", "given name"],
     negative: ["last", "middle", "father", "mother", "company", "college", "university", "employer"]
   },
