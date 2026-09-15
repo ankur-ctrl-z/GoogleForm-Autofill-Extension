@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body; 
+  const body = document.body;  
   const toggle = document.getElementById("themeToggle");
   const fillBtn = document.getElementById("fillBtn");
   const themeLabel = document.querySelector(".toggle-container span"); // ← grab the label
